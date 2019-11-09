@@ -23,7 +23,9 @@ $colors: (#f00, #0f0, #00f);
     color: #fff;
     fill: #fff;
 }
-#navbar *{ transition: inherit; }
+#navbar *{
+    transition: inherit;
+}
 
 #topRow{
     max-height: 100px;
@@ -41,8 +43,9 @@ $colors: (#f00, #0f0, #00f);
     mix-blend-mode: screen;
 }
 #station{
+    font-family: var(--main-font);
     opacity: 0;
-    font-size: 30px;
+    font-size: 32px;
 }
 #navbar:hover #text1{ transform: translate(-6px, -10px); }
 #navbar:hover #text2{ transform: translate(-3px, -5px); }
@@ -59,7 +62,8 @@ $colors: (#f00, #0f0, #00f);
     background: none;
     border: none;
     height: 100px;
-    outline: none;;
+    outline: none;
+    cursor: pointer;
 }
 .navbar-svg{
     width: 100%;
@@ -69,8 +73,9 @@ $colors: (#f00, #0f0, #00f);
 #navbar:hover .navbar-circle{ opacity: 0; }
 
 .navbar-text{
+    font-family: var(--main-font);
     opacity: 0;
-    font-size: 25px;
+    font-size: 20px;
 }
 #navbar:hover .navbar-text{ opacity: 1; }
 
@@ -83,4 +88,36 @@ $colors: (#f00, #0f0, #00f);
 #line1{ transform: translateX(-80%); }
 #line2{ transform: translateX(-82.5%); }
 #line3{ transform: translateX(-85%); }
-#navbar:hover .navbar-line{ transform: translateX(0);}
+#navbar:hover .navbar-line{ transform: translateX(0); }
+
+#sidenav{
+    border-right: solid #fff 1px;
+}
+
+#content-table{
+    height: 100%;
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+#sidebar{
+    border: solid #fff 2px;
+    border-bottom: none;
+    height: calc(100% - 8px);
+    width: 50px;
+    text-align: center;
+    padding: 0;
+    background: #000000;
+}
+.slice{
+    border-top: soild #fff 1px;
+    border-bottom: solid #fff 1px;
+}
+.mat-expansion-panel.mat-expanded{
+    margin: 0;
+}
+#t-line, #b-line{
+    transition: all 500ms ease-in-out;
+    transform: translateY(0);
+}
+.on #t-line{ transform: translateY(25px); }
+.on #b-line{ transform: translateY(-25px); }

@@ -20,10 +20,68 @@
   <tr id="bottomRow">
     <td colspan="100">
       <svg id="navbar-lines">
-        <line id="line1" class="navbar-line color-1" x1="0" y1="5" x2="100%" y2="5" style="stroke-width: 10px;"></line>
-        <line id="line2" class="navbar-line color-2" x1="0" y1="20" x2="100%" y2="20" style="stroke-width: 10px;"></line>
-        <line id="line3" class="navbar-line color-3" x1="0" y1="35" x2="100%" y2="35" style="stroke-width: 10px;"></line>
+        <line id="line1" class="navbar-line color-1" x1="0" y1="5" x2="100%" y2="5" style="stroke-width: 10px;"/>
+        <line id="line2" class="navbar-line color-2" x1="0" y1="20" x2="100%" y2="20" style="stroke-width: 10px;"/>
+        <line id="line3" class="navbar-line color-3" x1="0" y1="35" x2="100%" y2="35" style="stroke-width: 10px;"/>
       </svg>
     </td>
   </tr>
 </table>
+<mat-sidenav-container style="height: calc(100% - 152px); background: none;" class="main-font">
+  <mat-sidenav #sidenav mode="side" style="border-top: solid #fff 2px; width: 300px">
+    <mat-accordion>
+      <mat-expansion-panel class='slice'>
+        <mat-expansion-panel-header [collapsedHeight]="'48px'" [expandedHeight]="'48px'">Top 30 tracks</mat-expansion-panel-header>
+        Track information
+      </mat-expansion-panel>
+      <mat-expansion-panel class='slice'>
+        <mat-expansion-panel-header [collapsedHeight]="'48px'" [expandedHeight]="'48px'">Currently playing</mat-expansion-panel-header>
+        <a class="twitter-timeline" data-lang="en" data-width="400" data-height="200" data-theme="dark" href="https://twitter.com/WPTSPlaylist?ref_src=twsrc%5Etfw">Tweets by WPTSPlaylist</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+      </mat-expansion-panel>
+      <mat-expansion-panel class='slice'>
+        <mat-expansion-panel-header [collapsedHeight]="'48px'" [expandedHeight]="'48px'">Radio Show Application</mat-expansion-panel-header>
+        Content
+      </mat-expansion-panel>
+      <mat-expansion-panel class='slice'>
+        <mat-expansion-panel-header [collapsedHeight]="'48px'" [expandedHeight]="'48px'">Live DJ Request form</mat-expansion-panel-header>
+          Content
+      </mat-expansion-panel>
+      <mat-expansion-panel class='slice'>
+        <mat-expansion-panel-header [collapsedHeight]="'48px'" [expandedHeight]="'48px'">Alumni Links</mat-expansion-panel-header>
+        <mat-list dense>
+          <mat-list-item>Link 1</mat-list-item>
+          <mat-list-item>Link 2</mat-list-item>
+          <mat-list-item>Link 3</mat-list-item>
+        </mat-list>
+      </mat-expansion-panel>
+      <mat-expansion-panel class='slice'>
+        <mat-expansion-panel-header [collapsedHeight]="'48px'" [expandedHeight]="'48px'">Underwriting partners</mat-expansion-panel-header>
+        <mat-list dense>
+          <mat-list-item><a href="https://www.hofbrauhauspittsburgh.com/" target="_blank">Hoffbrau Haus</a></mat-list-item>
+          <mat-list-item><a href="https://www.kennywood.com/" target="_blank">Kennywood</a></mat-list-item>
+        </mat-list>
+      </mat-expansion-panel>
+      <mat-expansion-panel class='slice'>
+        <mat-expansion-panel-header [collapsedHeight]="'48px'" [expandedHeight]="'48px'">Public File</mat-expansion-panel-header>
+        <a href="https://publicfiles.fcc.gov/fm-profile/wpts-fm" target="_blank">WPTS Public File</a>
+      </mat-expansion-panel>
+        
+    </mat-accordion>
+  </mat-sidenav>
+  <mat-sidenav-content style="overflow: hidden;">
+    <table id="content-table">
+    <tr>
+      <td id="sidebar" valign="top">
+        <button mat-button (click)="sidenav.toggle(); toggled=!toggled" style="display: inline;">
+          <svg [ngClass]="toggled ? 'on' : 'off'" style="width: 100%" viewBox="0 0 100 100">
+            <line id="t-line" x1="10" y1="25" x2="90" y2="25" style="stroke-width: 10px; stroke: #ffffff;" stroke-linecap="round"/>
+            <line id="m-line" x1="10" y1="50" x2="90" y2="50" style="stroke-width: 10px; stroke: #ffffff;" stroke-linecap="round"/>
+            <line id="b-line" x1="10" y1="75" x2="90" y2="75" style="stroke-width: 10px; stroke: #ffffff;" stroke-linecap="round"/>
+          </svg>
+        </button>
+      </td>
+      <td id="contentContainer"><router-outlet></router-outlet></td>
+    </tr>
+    </table>
+  </mat-sidenav-content>
+</mat-sidenav-container>
