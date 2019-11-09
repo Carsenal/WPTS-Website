@@ -1,0 +1,86 @@
+$colors: (#f00, #0f0, #00f);
+
+@each $color in $colors {
+    $i: index($colors, $color);
+    .color-#{$i}{
+        color: $color;
+        stroke: $color;
+        fill: $color;
+    }
+}
+
+#navbar{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 140px;
+    overflow: hidden;
+    border-spacing: 0;
+    border-collapse: collapse;
+    transition: all 1s;
+    font-family: var(--menu-font);
+    font-weight: 900;
+    color: #fff;
+    fill: #fff;
+}
+#navbar *{ transition: inherit; }
+
+#topRow{
+    max-height: 100px;
+    height: 100px;
+}
+#bottomRow{ height: 40px; }
+#logo-td{ width: 350px; }
+#svg-logo{
+    width: 350px;
+    height: 100px;
+}
+.navbar-logo-text{
+    font-style: italic;
+    font-size: 80px;
+    mix-blend-mode: screen;
+}
+#station{
+    opacity: 0;
+    font-size: 30px;
+}
+#navbar:hover #text1{ transform: translate(-6px, -10px); }
+#navbar:hover #text2{ transform: translate(-3px, -5px); }
+#navbar:hover #station{ opacity: 1;}
+
+.navbar-link{
+    margin: 0;
+    padding: 0;
+    width: 75px;
+}
+.navbar-button{
+    margin: 0;
+    padding: 0;
+    background: none;
+    border: none;
+    height: 100px;
+    outline: none;;
+}
+.navbar-svg{
+    width: 100%;
+    height: 100%;
+}
+.navbar-circle{ opacity: 1; }
+#navbar:hover .navbar-circle{ opacity: 0; }
+
+.navbar-text{
+    opacity: 0;
+    font-size: 25px;
+}
+#navbar:hover .navbar-text{ opacity: 1; }
+
+#navbar-lines{
+    margin: 0;
+    padding: 0;
+    height: 40px;
+    width: 100%;
+}
+#line1{ transform: translateX(-80%); }
+#line2{ transform: translateX(-82.5%); }
+#line3{ transform: translateX(-85%); }
+#navbar:hover .navbar-line{ transform: translateX(0);}
