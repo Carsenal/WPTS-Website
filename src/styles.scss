@@ -13,7 +13,7 @@
 .header-font{ font-family: var(--header-font); }
 .menu-font{ font-family: var(--menu-font); }
 
-body{ background: url('./assets/dark-linear.gif'); }
+body{ background: url('./assets/softmotion3.gif'); }
 html, body { height: 100%; color: #fff;}
 body { margin: 0; }
 
@@ -250,4 +250,29 @@ a:hover{
     color: #000000;
     background: #ffffff;
     text-decoration: none;
+}
+
+.slice{
+  border-top: solid #fff 1px;
+  border-bottom: solid #fff 1px;
+}
+.card{
+  margin: 100px;
+  margin-top: 50px;
+  padding: 10px;
+  border: 2px solid #ffffff;
+  border-radius: 50px;
+  background: #000000;
+}
+
+.divider{
+  margin-top: 5px;
+  margin-bottom: 5px;
+  margin-left: 25px;
+  margin-right: 25px;
+  width: calc(100% - 50px);
+  height: 2px;
+  border-radius: 2px;
+  padding: 0;
+  background: #ffffff;
 }
