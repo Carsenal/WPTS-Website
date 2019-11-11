@@ -1,0 +1,18 @@
+<div class="card">
+    <table id="info">
+    <tr>
+        <td id="pfp" rowspan="2"><img [src]="person.pfp" style="width: 150px; border-radius: 50%;"></td>
+        <td id="name"><h1>{{person.name}}</h1></td>
+        <td id="twitter"></td>
+        <td id="instagram"></td>
+    </tr>
+    <tr><td colspan="3"><div class="divider"></div></td></tr>
+    </table>
+    <div layout="row" layout-xs="column">
+        <div flex>Carson's top 4</div>
+        <div flex>Your top 4</div>
+    </div>
+    <div layout="row" layout-xs="column">
+        <div id="output"></div>
+    </div>
+</div>

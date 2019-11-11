@@ -1,0 +1,30 @@
+<div class="card">
+    <h1>WPTS Album of the Decade</h1>
+    <div class="divider"></div>
+    <p>Arrange the songs below in the order you feel appropriate, with the best track highest. When you're happy with your list, click "Finish" to get your WPTS Staffer match</p>
+    <div cdkDropList class="list" (cdkDropListDropped)="drop($event)">
+        <div class="box" *ngFor="let song of songs" cdkDrag>
+            <div class="placeholder" *cdkDragPlaceholder></div>
+            <table class="song"><tr>
+                <td class="song-image" valign="middle"><img src="{{song.cover.href}}" style="display: block;"></td>
+                <td class="song-name">{{song.name}}</td>
+                <td class="song-artist">{{song.artist}}</td>
+                <td class="song-album">{{song.album}}</td>
+                <td class="song-play">
+                    <audio id="audio{{song.id}}" preload="auto" crossorigin="anonymous" controls><source src="{{song.preview.href}}"></audio>
+                    <!--button mat-button (click)="play(song.id)">Play</button-->
+                </td>
+                <td class="song-link"><a href="{{song.link.href}}" target="_blank"><img src="https://www.freepnglogos.com/uploads/spotify-logo-png/image-gallery-spotify-logo-21.png" width="32px" height="32px"></a></td>
+            </tr></table>
+        </div>
+    </div>
+    <div class="divider"></div>
+    <button mat-flat-button color="primary" routerLink="/recommendation">Finish</button>
+</div>
+<table id="player">
+<tr>
+    <td id="player-cover"><img src="https://i.scdn.co/image/a207edace3e44a5e7bfdd57bf3137fdf48932cda"></td>
+    <td id="player-song">Test song</td>
+    <td id="player-status"></td>
+</tr>
+</table>

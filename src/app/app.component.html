@@ -8,8 +8,14 @@
         <text id="station" x="260" y="80">92.1</text>
       </svg>
     </td>
-    <td *ngFor="let item of links" class="navbar-link">
-      <button [routerLink]="item.path" class="navbar-button">
+    <td *ngFor="let item of links" class="navbar-link" [ngSwitch]="item.nest">
+        <button *ngSwitchCase="true" [routerLink]="item.path" class="navbar-button">
+          <svg class="navbar-svg">
+            <circle class="navbar-circle" cx="50%" cy="50%" r="3" style="fill: #ffffff;"></circle>
+            <text class="navbar-text" x="50%" y="50%" text-anchor="middle" dominant-baseline="middle">{{item.name}}\/</text>
+          </svg>
+        </button>
+      <button *ngSwitchCase="false" [routerLink]="item.path" class="navbar-button">
         <svg class="navbar-svg">
           <circle class="navbar-circle" cx="50%" cy="50%" r="3" style="fill: #ffffff;"></circle>
           <text class="navbar-text" x="50%" y="50%" text-anchor="middle" dominant-baseline="middle">{{item.name}}</text>
@@ -65,10 +71,9 @@
         <mat-expansion-panel-header [collapsedHeight]="'48px'" [expandedHeight]="'48px'">Public File</mat-expansion-panel-header>
         <a href="https://publicfiles.fcc.gov/fm-profile/wpts-fm" target="_blank">WPTS Public File</a>
       </mat-expansion-panel>
-        
     </mat-accordion>
   </mat-sidenav>
-  <mat-sidenav-content style="overflow: hidden;">
+  <mat-sidenav-content>
     <table id="content-table">
     <tr>
       <td id="sidebar" valign="top">
@@ -80,7 +85,7 @@
           </svg>
         </button>
       </td>
-      <td id="contentContainer"><router-outlet></router-outlet></td>
+      <td id="contentContainer" valign="top" style="text-align: center;"><router-outlet></router-outlet></td>
     </tr>
     </table>
   </mat-sidenav-content>

@@ -8,13 +8,20 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'WPTS-Website';
   links = [
-    {name: 'Listen', path: '/listen'},
-    {name: 'About', path: ''},
-    {name: 'Contact', path: ''},
-    {name: 'Music', path: ''},
-    {name: 'News', path: ''},
-    {name: 'Sports', path: ''},
-    {name: 'Podcasts', path: ''},
-    {name: 'Events', path: ''},
+    {name: 'Listen',   nest: false, path: '/listen'},
+    {name: 'About',    nest: true, children: [
+      {name: 'Staff', nest: false, path:'/staff'},
+      {name: 'Full Show Schedule', nest: false, path: ''},
+      {name: 'Contacting the Station', nest: false, path: ''},
+      {name: 'Mission, Vision, Values', nest: false, path: ''}
+    ], path: null},
+    {name: 'Contact',  nest: false, path: ''},
+    {name: 'Music',    nest: true, children: [
+      {name: 'Charts', nest: false, path: ''}
+    ], path: ''},
+    {name: 'News',     nest: false, path: ''},
+    {name: 'Sports',   nest: false, path: ''},
+    {name: 'Podcasts', nest: false, path: ''},
+    {name: 'Events',   nest: false, path: ''}
   ];
 }

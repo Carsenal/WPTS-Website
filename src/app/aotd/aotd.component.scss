@@ -1,0 +1,90 @@
+.list {
+    width: 100%;
+    border: solid 1px #ccc;
+    min-height: 60px;
+    display: block;
+    background: #000000;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.box {
+    padding: 0;
+    height: 70px;
+    border-bottom: solid 1px #ccc;
+    color: rgba(255, 255, 255, 0.87);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+    cursor: move;
+    background: #000000;
+    font-size: 14px;
+    font-family: var(--main-font);
+}
+
+.cdk-drag-preview {
+    box-sizing: border-box;
+    border-radius: 4px;
+    box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2),
+                0 8px 10px 1px rgba(0, 0, 0, 0.14),
+                0 3px 14px 2px rgba(0, 0, 0, 0.12);
+}
+
+.cdk-drag-animating {
+    transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+.box:last-child {
+    border: none;
+}
+
+.list.cdk-drop-list-dragging .box:not(.cdk-drag-placeholder) {
+    transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+.placeholder {
+    background: rgba(255, 255, 255, 0.1);
+    border: dotted 3px #999;
+    height: 70px;
+    transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+
+.song{
+    width: 100%;
+    text-align: left;
+    height: 72px;
+}
+.song-image{
+    width: 64px;
+    height: 70px;
+}
+.song-name{
+    padding-left: 25px;
+    width: 30%;
+}
+.song-artist{
+    width: 20%;
+}
+.song-album{
+    width: 20%;
+}
+.song-link{
+    padding-right: 25px;
+    text-align: right;
+}
+
+#player{
+    position: fixed;
+    bottom: 0;
+    right: 25px;
+    border: 2px solid #ffffff;
+    border-bottom: none;
+    width: 350px;
+    height: 50px;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    background: #000000;
+}
